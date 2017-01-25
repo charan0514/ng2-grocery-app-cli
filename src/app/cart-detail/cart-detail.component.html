@@ -1,0 +1,32 @@
+<div class="my-cart-details">
+	<nav class="float-left">
+		<a routerLink="/grocery-store">Goto Store</a>
+	</nav>
+		
+		<div class="groceries" *ngIf="myCart">
+			<span class="cart-header" *ngIf="!cartItems.length">Your Cart is empty</span>
+			<table *ngIf="cartItems.length">
+				<tr>
+					<th>Name</th>
+					<th>Quantity</th>
+					<th colspan='2'>Price</th>
+				</tr>
+				<tr *ngFor="let item of cartItems">
+					<td>{{ item.name }}</td>
+					<td>{{ item.quantity }}</td>
+					<td>{{ item.price }}</td>
+					<td><button class="delete float-right"
+			      	(click)="removeGrocery(item); $event.stopPropagation()">x</button></td>
+				</tr>
+			</table>
+			<div class="subTotal" *ngIf="myCart.totalPrice>0">
+				<div>
+					<label> Your Total </label>
+					<span>{{myCart.totalPrice}}</span>
+				</div>
+				<div>
+					<button class="payment" (click)="doPayment(myCart)">Pay</button>
+				</div>
+			</div>
+		</div>
+	</div>

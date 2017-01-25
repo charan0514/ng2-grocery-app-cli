@@ -1,0 +1,59 @@
+<div class="grocery-store">
+	<nav class="float-right">
+		<a routerLink="/cart-details">My Cart</a>
+		&nbsp;&nbsp;
+		<a routerLink="/login">Logout</a>
+		&nbsp;&nbsp;
+	</nav>
+
+	<div class="select-groceries float-left">
+		<label>Add Gorcery</label>
+		<input #groceryItem (keyup)="search(groceryItem.value)" value ="{{selectedItem}}" />
+		<label>Quantity</label>
+		<input type="number" #quantity/>
+		<button (click)="addGrocery(groceryItem.value, quantity.value); groceryItem.value='';quantity.value=''">Add</button>
+		<div class="search-result-wraper">
+		    <div *ngFor="let item of groceryList | async"
+		         (click)="selectGrocery(item)" class="search-result" >
+		      {{item.name}}
+		    </div>
+		</div>
+	</div>
+
+	<div class="my-cart float-left">
+		<div class="total-payment" *ngIf="(cartItems) &&(myCart.totalPrice>0)">
+			<div>
+				<label> Your Total </label>
+				<span>{{myCart.totalPrice}}</span>
+				<button class="payment" (click)="doPayment(myCart)">Pay</button>
+			</div>
+		</div>
+	</div>
+		<!-- <span class="cart-header">Cart</span>
+		<div class="groceries" *ngIf="cartItems">
+			<ul class="">
+			  <li *ngFor="let item of cartItems" (click)="onSelect(item)"
+			      [class.selected]="groceries === selectedItem">
+			    <span class="name float-left">{{item.name}}</span>
+			    <span class="badge float-left">{{item.quantity}}</span>
+			    <span class="price float-left">{{item.price}}</span>
+			    <button class="delete float-right"
+			      (click)="removeGrocery(item); $event.stopPropagation()">x</button>
+			  </li>
+			</ul>
+			<div class="subTotal" *ngIf="myCart.totalPrice>0">
+				<div>
+					<label> Your Total </label>
+					<span>{{myCart.totalPrice}}</span>
+				</div>
+				<div>
+					<button class="payment" (click)="doPayment(myCart)">Pay</button>
+				</div>
+			</div> 
+		</div>
+	</div>-->
+
+
+</div>
+
+

@@ -1,0 +1,102 @@
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+.my-cart{
+  width: 50%;
+}
+.select-groceries{
+  width: 50%;
+}
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.groceries {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.groceries li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.groceries li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.groceries li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.groceries .name {
+  width: 60%;
+  padding-left: 2%;
+}
+.groceries .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 2%;
+  background-color: #607D8B;
+  //line-height: 1em;
+  position: relative;
+  //left: -1px;
+  //top: -4px;
+  //height: 1.8em;
+  border-radius: 4px;
+  width: 10%;
+}
+
+.groceries .price {
+  width: 10%;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button.delete {
+  margin-top: 2px;
+  background-color: gray !important;
+  color:white;
+  width: 10%;
+  margin-right: 2%;
+}
+
+/* search results*/
+.search-result-wraper {
+  padding: 5% 0% 0% 10%;
+}
+.search-result-wraper .search-result{
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width:195px;
+  height: 40px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.search-result-wraper .search-result:last-child{
+  border-bottom: 1px solid gray;
+}
